@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.controller.notice.NoticeController;
+
 public class MyDispatcher extends HttpServlet {
 	/* 디스패쳐 :중재자 */
 	/* 목적 컨트롤러로 다 신호를 들어오게해서 조작하게하려고함 */
@@ -20,26 +22,26 @@ public class MyDispatcher extends HttpServlet {
 		String uri = request.getRequestURI();
 		String conPath = request.getContextPath();
 		String com = uri.substring(conPath.length());
-		// 어디서 실행해서 .do해서 들어오냐에 따라 uri와 conpath가 달라짐
-		/*
-		 * 나는지금 notice.jsp에서 들어와서 경로가 이렇게 나오는것임. uri:/jspwebm10/customer/notice.do
-		 * conpath:/jspwebm10
-		 */
-		
+
 		System.out.println("uri:" + uri);
 		System.out.println("conpath:" + conPath);
 		System.out.println("com :" + com);
 
-		//모두 인터페이스 상속받았으니까 무도 타입으로 넣어주기
 	
-/*		
+		Controller controller=null;
+		
+		
+		
+		 
 		try {
-			if (com.equals("/customer/noticeDetail.do")) {
+			if (com.equals("/customer/notice.do")) {
+				controller=new NoticeController();
 			}
+			
+			controller.execute(request, response);
 		} catch (Exception e) {
 
 		}
-		*/
 		
 	}
 
