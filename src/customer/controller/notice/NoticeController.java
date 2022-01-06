@@ -41,7 +41,7 @@ public class NoticeController implements Controller {
 
 		
 		/*포워딩하면 자료를 살려서 보내줄수있다. 샌드는 자료가 없어져서 안돼고*/
-		request.getRequestDispatcher("/WebContent/customer/upload/notice.jsp").forward(request, response);
+		request.getRequestDispatcher("notice.jsp").forward(request, response);
 		/*포워드 해주는 것들에는 list .query 가있따. 담아준만큼 다 보내준다*/
 		
 	}
