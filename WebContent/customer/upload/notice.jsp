@@ -16,27 +16,17 @@
 <title>Insert title here</title>
 
 <!-- 사용자 편의를 위해 검색창을 눌렀을 때 입력값이 지워지게 function처리 -->
-<script>
-	function clearVal(){ 
-		var inputVal=document.getElementById("q");
-		inputVal.value='';
-	}
-</script>
+
 </head>
 <body>
 <h3>Notice.jsp</h3>
 
-<c:if test="${empty sessionScope.uid }">
 	<a href="../login/login.do">login</a>
-</c:if>
+
  | 
-<c:if test="${not empty sessionScope.uid }">
+
 	<a href="../login/logoutProc.do">logout</a>
-</c:if>
-<br />
-<c:if test="${not empty uid }">
-	${uid }님 반가 반가
-</c:if>
+
 <br />
 
 <hr />
@@ -81,9 +71,9 @@ for(Notice n:list){
 }
 %> --%>
 </table>
-<c:if test="${not empty sessionScope.uid }">
+
 		<a href="noticeReg.do">write</a>
-</c:if>
+
 <br /><br /><br /><br />
 </body>
 </html>
