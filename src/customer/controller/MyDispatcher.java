@@ -13,6 +13,9 @@ public class MyDispatcher extends HttpServlet {
 	/* 디스패쳐 :중재자 */
 	/* 목적 컨트롤러로 다 신호를 들어오게해서 조작하게하려고함 */
 
+	//Controller에서 데이터 처리
+	
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
